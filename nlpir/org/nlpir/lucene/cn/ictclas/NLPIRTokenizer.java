@@ -144,11 +144,12 @@ public class NLPIRTokenizer extends Tokenizer {
 			current = 0;
 			return false;
 		}
-		while (cbuffer == null || buffer.length==0) {
+		while(cbuffer == null||buffer.length==0) {
 			cbuffer = new StringBuffer();
 			int c = 0;
-			while ((c = input.read()) != -1) {
-				cbuffer.append((char) c);
+			while ((c = input.read()) != -1) 
+			{				
+				cbuffer.append((char)c);
 			}
 			buffer = CNLPIRLibrary.Instance.NLPIR_ParagraphProcess(cbuffer.toString(), 0).split("\\s");
 		}
